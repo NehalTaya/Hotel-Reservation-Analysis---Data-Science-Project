@@ -1,36 +1,7 @@
----
-output:
-  word_document: default
-  html_document: default
----
 
-## Final Project
-
-### Rules of Engagement: 
-
-This is an **honor system assignment**: You may consult your professor, your lab instructor, the textbook, and material on the Internet at any time. You may not consult, collaborate, or seek assistance from any other human besides your professor and lab instructor. Your attribution statement, at the top of your R-code file, should reflect these constraints.
-
-```{r}
-# Enter your name here: Nehal Taya
-```
-
-### Attribution statement: (choose only one and delete the rest)
-
-```{r}
-
-# 2. I did this homework with help from the book and the professor and these Internet sources: Google Search
-
-```
-
-
-
-```{r}
-#Question 1
 dataFile <- "https://intro-datascience.s3.us-east-2.amazonaws.com/Resort01.csv" #Storing the CSV file in a variable dataFile
 
-remove.packages(rlang)
 
-install.packages("rlang")
 install.packages("tidyverse") #Installs Tidyverse package
 
 library(tidyverse) #Loads tidyverse library
