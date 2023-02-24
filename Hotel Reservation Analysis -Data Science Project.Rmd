@@ -60,7 +60,7 @@ summary(bookings) #Returns descriptive statistics of all the variables in the da
 
 ```{r}
 
-#Question 2
+
 
 str(bookings) #Using str function to identify internal structure of the dataframe bookings
 
@@ -112,7 +112,7 @@ bookings$RequiredCarParkingSpaces[is.na(bookings$RequiredCarParkingSpaces)]
 ```
 
 ```{r}
-#Question3
+
 
 table(bookings$Meal) #Table function uses the cross-classifying factors to build a contingency table of the counts at each combination of factor levels .Since the Meal  column has only four levels ie. Undefined/SC	– no	meal	package;	BB	– Bed	&	Breakfast;		HB	– Half	board	(breakfast	and	one	other	meal	– usually	dinner);		FB	– Full	board	(breakfast,	lunch	and	dinner)	 , it displays the count of each type of meals booked by customers  in the bookings  dataframe.
 
@@ -130,7 +130,7 @@ table(bookings$DepositType)
 
 
 ```{r}
-#Question 4
+
 
 #install.packages("ggplot2") #Installs ggplot2 package which is required for data visualization
 library(ggplot2) #Loads ggplot2 library
@@ -161,7 +161,7 @@ myPlot2 #The Boxplot shows that the median number of previous bookings that were
 ```
 
 ```{r}
-#Question 5
+
 
 #TotalOfSpecialRequests
 
@@ -180,7 +180,7 @@ ggplot(bookings, aes(x = RequiredCarParkingSpaces )) + geom_histogram(fill = "wh
 ```
 
 ```{r}
-#Question 6
+
 
 bookings$BookingCount <- bookings$StaysInWeekendNights+bookings$StaysInWeekNights # Summing StaysInWeekendNights:the number	of	weekend	nights	(Saturday	or	Sunday)	the	guest	stayed	or	booked	to	stay	at	the	hotel	and  StaysInWeekNights which is 	number	of	week	nights	(Monday	to	Friday)	the	guest	stayed	or	booked	to	stay	at	the	hotel	and storing the total number of weekdays and weekend bookings in a variable BookingCount
 
@@ -200,7 +200,7 @@ CountryBooking[which.max(CountryBooking$TotalBookings),]#Using subsetting and  w
 ```
 
 ```{r}
-#Question 7
+
 
 country <-aggregate(bookings$IsCanceled, by=list(Country=bookings$Country), FUN=sum) #Using aggregate function to get the sum of cancellations by country name
 
@@ -218,7 +218,7 @@ country[which.max(country$numCanceled),]#Using subsetting and  which.max functio
 ```
 
 ```{r}
-#Question 8
+
 
 #install.packages("rworldmap") #Installs rworldmap package which helps in mapping global data
 library(rworldmap) #Loads rworldmap library
@@ -238,7 +238,7 @@ map<-mapCountryData(sPDF, nameColumnToPlot='numCanceled',catMethod="logFixedWidt
 
 ```{r}
 
-#Question 9
+
 
 #Creating a mini version of our original data bookings  with select variables only and converting	the columns Meal,MarketSegment,IsRepeatedGuest,AssignedRoomType,CustomerType,BookingChanges which are greater than 0 and IsCanceled	into	factor variables	
 
@@ -276,7 +276,7 @@ inspect(bookCatX[1:10]) #Returns first 10 observations of the bookCatX transacti
 
 
 ```{r}
-#Question 10
+
 
 #Using apriori() to generate a set of rules with, e.g. support over 0.005 and confidence over 0.97, and trying to predict transactions where the stay in hotel or reservation was cancelled
 
@@ -308,7 +308,7 @@ inspect(rules) #Using inspect function to review the ruleset .
 ```
 
 ```{r}
-#Question 11
+
 
 #install.packages(c("kernlab","caret")) #Installing kernlab and caret package
 library(kernlab) #Loads kernlab library
@@ -342,7 +342,7 @@ testSet <- book[-trainList,]
 
 ```{r}
 
-#Question 12
+
 
 #Training an SVM model by fitting it to the train set and letting it learn from its data
 
@@ -397,7 +397,7 @@ confusionMatrix(testSet$canceled, prediction) #It can be seen that the accuracy 
 ```
 
 ```{r}
-#Question 13
+
 
 #Suggestions to the CEO 
 
